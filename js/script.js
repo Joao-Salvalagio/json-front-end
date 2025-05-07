@@ -7,7 +7,8 @@ botao.addEventListener('click',
             senha: document.getElementById('senha').value
         };
         console.log(login);
-        converterEmJson(login);
+        //converterEmJson(login);
+        imprimirObjeto(login);
     }
 );
 
@@ -23,4 +24,16 @@ function imprimirJson(json){
     h2.textContent = json;
 
     impressao.appendChild(h2);
+}
+
+function imprimirObjeto(objLogin){
+    const impressao = document.getElementById('impressao');
+
+    let pUsuario = document.createElement('p');
+    pUsuario.textContent = objLogin.login;
+    let pSenha = document.createElement('p');
+    pSenha.textContent = objLogin.senha;
+
+    impressao.appendChild(pUsuario);
+    impressao.appendChild(pSenha);
 }
